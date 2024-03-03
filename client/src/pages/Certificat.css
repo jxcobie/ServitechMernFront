@@ -1,0 +1,37 @@
+.CertificatContainer{
+    margin: 20px;
+    background-color: var(--main-bg);
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.certifinput{
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.7px;
+    width: 27%;
+}
+
+.inputfields{
+    margin: 20px;
+    background-color: var(--main-bg);
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px 10px;
+    padding: 50px 10px;
+}
+
+h2 span{
+    font-weight: 900;
+}
+
+
+h2 {
+    font-weight: 500;
+}
