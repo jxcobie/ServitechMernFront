@@ -11,8 +11,19 @@ app.use(bodyParser.json({ 'limit': '30mb', 'extended': true }));
 app.use(bodyParser.urlencoded({ 'limit': '30mb', 'extended': true }));
 
 
+function getAllowedOrigin(req) {
+    const frontendDomain = process.env.FRONTEND_DOMAIN; // Get from environment variable
+    if (frontendDomain) {
+      return frontendDomain;
+    } else {
+      // Default to restrictive if not set (for local development)
+      return 'http://localhost:3000';
+    }
+  }
+
 const corsOptions = {
-    origin: 'http://localhost:3000',  // Update this to the URL of your React app
+  origin: getAllowedOrigin,
+  credentials: true, // Optional, to allow cookies
 };
 
 app.use(cors(corsOptions));
@@ -24,7 +35,7 @@ app.use('/inspections', inspectionRoutes);
 
 
 
-const dbURI = 'mongodb://localhost:27017/servitech'; // For local MongoDB
+const dbURI = 'mongodb+srv://jxcobcreations:gTuLrcYujZr4HYia@cluster0.drufggw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; // For local MongoDB
 const port = 5000;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
