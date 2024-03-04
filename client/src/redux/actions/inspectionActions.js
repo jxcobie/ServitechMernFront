@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Create an instance of Axios with a custom baseURL
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5000', // Replace 'yourPort' with the actual port number
+  baseURL: 'https://servitech-server.onrender.com', // Replace 'yourPort' with the actual port number
 });
 
 export const FETCH_INSPECTIONS = 'FETCH_INSPECTIONS';
